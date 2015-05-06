@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SportKinator</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="button">Oui</string>
+    <string name="buttonDontKnow">Je ne sais pas</string>
+    <string name="buttonNo">Non</string>
+</resources>

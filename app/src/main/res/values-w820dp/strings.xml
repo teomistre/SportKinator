@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button">Oui</string>
+    <string name="buttonDontKnow">Je ne sais pas</string>
+    <string name="buttonNo">Non</string>
+</resources>
