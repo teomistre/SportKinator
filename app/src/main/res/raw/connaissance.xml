@@ -8,48 +8,48 @@
                         <question id="6" type="hiver" name="Est ce un sport d'hiver ?"  response="oui">
                             <question id="7" type="ski" name="Se pratique-t-il avec des skis ?" response="oui">
                                 <question  id="8" type="pente" name="Le pratique-t-on sur une pente ? " response="oui">
-                                    <sport response="ski alpin"/>
+                                    <sport response="ski alpin" image="ski_alpin.jpg"/>
                                 </question>
                                 <question  id="8" type="pente" name="Le pratique-t-on sur une pente ? " response="non">
-                                    <sport response="ski de fond"/>
+                                    <sport response="ski de fond" image="ski_de_fond.jpg"/>
                                 </question>
                             </question>
                             <question  id="7" type="ski" name="Se pratique-t-il avec des skis ?" response="non">
-                                <sport response="Luge"/>
+                                <sport response="Luge" image="luge.gif"/>
                             </question>
                         </question>
                         <question id="6" type="hiver" name="Est ce un sport d'hiver ?" response="non">
-                            <sport response="voile"/>
+                            <sport response="voile" image="voile.gif"/>
                         </question>
                     </question>
                     <question id="5" type="olympique pleinair" name="Se pratique-t-il uniquement en plein air ?" response="non">
-                        <sport response="boxe anglaise"/>
+                        <sport response="boxe anglaise" image="boxe_anglaise.gif"/>
                     </question>
                 </question>
                 <question id="4" type="olympique" name="Est-ce un sport olympique ?" response="non">
                     <question id="9" type="gants pleinair" name="Se pratique-t-il uniquement en plein air ?" response="oui">
                         <question id="10" type="hiver" name="Est ce un sport d'hiver ?" response="oui">
                             <question id="11" type="animal" name="Y a-t-il un rapport avec les animeaux ?" response="oui">
-                                <sport response="traineau"/>
+                                <sport response="chien de traineau" image="chien_traineau.gif"/>
                             </question>
                             <question id="11" type="animal" name="Y a-t-il un rapport avec les animeaux ?" response="non">
-                                <sport response="ski de randonnee"/>
+                                <sport response="ski de randonnee" image="ski_de_randonnee.jpg"/>
                             </question>
                         </question>
                         <question id="10" type="hiver" name="Est ce un sport d'hiver ?" response="non">
                             <question id="12" type="mecanique" name="Est ce un sport mecanique ?" response="oui">
-                                <sport response="Motocross"/>
+                                <sport response="Motocross" image="motocross.jpg"/>
                             </question>
                             <question id="12" type="mecanique" name="Est ce un sport mecanique ?" response="non">
                                 <question id="13" type="velo" name="Se pratique t il avec un velo ?" response="oui">
-                                    <sport response="VTT"/>
+                                    <sport response="Cyclisme" image="velo.gif"/>
                                 </question>
                                 <question id="13" type="velo" name="Se pratique t il avec un velo ?" response="non">
                                     <question id="14" type="arbre" name="Y a il un rapport avec des arbres ou des branches ?" response="oui">
-                                        <sport response="accrobranche"/>
+                                        <sport response="accrobranche" image="accrobranche.gif"/>
                                     </question>
                                     <question id="14" type="arbre" name="Y a il un rapport avec des arbres ou des branches ?"  response="non">
-                                        <sport response="alpinisme"/>
+                                        <sport response="alpinisme" image="alpinisime.gif"/>
                                     </question>
                                 </question>
                             </question>
@@ -57,10 +57,10 @@
                     </question>
                     <question id="9" type="gants pleinair" name="Se pratique-t-il uniquement en plein air ?" response="non">
                         <question id="15" type="pelote" name="Y a t il une pelote ?"  response="oui">
-                            <sport response="pelote basque"/>
+                            <sport response="pelote basque" image="pelote_basque.jpg"/>
                         </question>
                         <question id="15" type="pelote" name="Y a t il une pelote ?" response="non">
-                            <sport response="boxe francaise"/>
+                            <sport response="boxe francaise" image="boxe_francaise.jpg"/>
                         </question>
                     </question>
                 </question>
@@ -71,11 +71,11 @@
                         <question id="18" type="extreme" name="Est ce un sport extreme ?" response="oui">
                             <question id="19"  type="pleinair mecanique" name="Est ce un sport mecanique ?" response="oui">
                                 <question id="20" type="aquatique" name="Est ce un sport aquatique ?" response="oui">
-                                    <sport response="JetSki"/>
+                                    <sport response="JetSki" image="jet_ski.jpg"/>
                                 </question>
                                 <question id="20" type="aquatique"  name="Est ce un sport aquatique ?" response="non">
                                     <question id="21"  type="mecanique aerien" name="Est ce un sport aerien ?" response="oui">
-                                        <sport response="aviation"/>
+                                        <sport response="aviation" image="aviation.png"/>
                                     </question>
                                     <question id="21" type="mecanique aerien" name="Est ce un sport aerien ?" response="non">
                                         <sport response="Rallye"/>
@@ -85,41 +85,41 @@
                             <question id="19"  type="pleinair mecanique" name="Est ce un sport mecanique ?" response="non">
                                 <question id="22" type="pleinair aquatique" name="Est ce un sport aquatique ?" response="oui">
                                     <question id="23" type="pleinair aerien" name="Est ce un sport aerien ?" response="oui">
-                                        <sport response="kitesurf"/>
+                                        <sport response="kitesurf" image="kitesurf.jpg"/>
                                     </question>
                                     <question id="23" type="pleinair aerien" name="Est ce un sport aerien ?" response="non">
-                                        <sport response="ski nautique"/>
+                                        <sport response="ski nautique" image="ski_nautique.gif"/>
                                     </question>
                                 </question>
                                 <question id="22" type="pleinair aquatique" name="Est ce un sport aquatique ?" response="non">
-                                    <sport response="parachutisme"/>
+                                    <sport response="parachutisme" image="parachustime.gif"/>
                                 </question>
                             </question>
                         </question>
                         <question id="18" type="extreme" name="Est ce un sport extreme ?" response="non">
                             <question id="24" type="terrestre" name="Se pratique t il uniquement sur un milieu terrestre ?" response="oui">
                                 <question id="25" type="terrestre animalier" name="Y a-t-il un rapport avec les animeaux ?" response="oui">
-                                    <sport response="equitation"/>
+                                    <sport response="equitation" image="equitation.jpg"/>
                                 </question>
                                 <question id="25" type="terrestre animalier" name="Y a-t-il un rapport avec les animeaux ?" response="non">
                                     <question id="26" type="corde" name="Y a t il une corde ?"  response="oui">
-                                        <sport response="speleologie"/>
+                                        <sport response="speleologie" image="speleologie.jpg"/>
                                     </question>
                                     <question id="26" type="corde"  name="Y a t il une corde ?" response="non">
                                         <question id="27" type="precision" name="Est ce un sport de precision ?" response="oui">
                                             <question id="28" type="fusil" name="Le pratique t on avec un fusil ?" response="oui">
-                                                <sport response="balltrap"/>
+                                                <sport response="balltrap" image="balltrap.gif"/>
                                             </question>
                                             <question id="28" type="fusil" name="Le pratique t on avec un fusil ?"  response="non">
-                                                <sport response="petanque"/>
+                                                <sport response="petanque" image="petanque.gif"/>
                                             </question>
                                         </question>
                                         <question id="27" type="precision"  name="Est ce un sport de precision ?" response="non">
                                             <question id="29" type="course" name="Est ce un sport de course ?" response="non">
-                                                <sport response="lancer du poids"/>
+                                                <sport response="lancer du poids" image="lancer_de_poids.jpg"/>
                                             </question>
                                             <question id="29" type="course" name="Est ce un sport de course ?" response="oui">
-                                                <sport response="course a pied"/>
+                                                <sport response="course a pied" image="course_a_pied.png"/>
                                             </question>
                                         </question>
                                     </question>
@@ -128,18 +128,18 @@
                             <question id="24" type="terrestre" name="Se pratique t il uniquement sur un milieu terrestre ?"  response="non">
                                 <question id="30" type="aerien" name="Est ce un sport aerien ?" response="oui">
                                     <question id="31" type="planeur" name="Y a t il un planeur ?"  response="oui">
-                                        <sport response="Vol a voile"/>
+                                        <sport response="Vol a voile" image="vol_a_voile.jpg"/>
                                     </question>
                                     <question id="31" type="planeur"  name="Y a t il un planeur ?" response="non">
-                                        <sport response="parapente"/>
+                                        <sport response="parapente" image="parapente.jpg"/>
                                     </question>
                                 </question>
                                 <question id="30" type="aerien" name="Est ce un sport aerien ?" response="non">
                                     <question id="32" type="animalier" name="Y a-t-il un rapport avec les animeaux ?" response="oui">
-                                        <sport response="peche"/>
+                                        <sport response="peche" image="peche.gif"/>
                                     </question>
                                     <question id="32" type="animalier" name="Y a-t-il un rapport avec les animeaux ?" response="non">
-                                        <sport response="plongee"/>
+                                        <sport response="plongee" image="plongee.gif"/>
                                     </question>
                                 </question>
                             </question>
@@ -150,40 +150,40 @@
                             <question id="34" type="raquette"  name="Le pratique t on avec une raquette ?" response="oui">
                                 <question id="35" type="balle" name="Le pratique t on avec une balle ?" response="oui">
                                     <question id="36" type="table" name="Le pratique t on sur une table ?" response="oui">
-                                        <sport response="Tennis de table"/>
+                                        <sport response="Tennis de table" image="tennis_de_table.jpg"/>
                                     </question>
                                     <question id="36" type="table" name="Le pratique t on sur une table ?" response="non">
-                                        <sport response="Tennis"/>
+                                        <sport response="Tennis" image="tennis.jpg"/>
                                     </question>
                                 </question>
                                 <question id="35" type="balle" name="Le pratique t on avec une balle ?" response="non">
-                                    <sport response="badminton"/>
+                                    <sport response="badminton" image="badminton.gif"/>
                                 </question>
                             </question>
                             <question id="34" type="raquette" name="Le pratique t on avec une raquette ?" response="non">
                                 <question id="37" type="aquatique" name="Est ce un sport aquatique ?" response="oui">
-                                    <sport response="plongeon"/>
+                                    <sport response="plongeon" image="plongeon.jpg"/>
                                 </question>
                                 <question id="37" type="aquatique" name="Est ce un sport aquatique ?" response="non">
                                     <question id="38" type="cible" name="Doit on viser une cible ?" response="oui">
                                         <question id="39" type="fleche"  name="Utilise on des fleches ?"  response="oui">
-                                            <sport response="Tir a l'arc"/>
+                                            <sport response="Tir a l'arc" image="tir_a_l_arc.jpg"/>
                                         </question>
                                         <question id="39" type="fleche"  name="Utilise on des fleches ?" response="non">
                                             <question id="40" type="boules"  name="Utilise on des boules ?"  response="oui">
-                                                <sport response="Billard"/>
+                                                <sport response="Billard" image="billard.jpg"/>
                                             </question>
                                             <question id="40" type="boules"  name="Utilise on des boules ?"  response="non">
-                                                <sport response="Tir sportif"/>
+                                                <sport response="Tir sportif" image="tir_sportif.jpg"/>
                                             </question>
                                         </question>
                                     </question>
                                     <question id="38" type="cible" name="Doit on viser une cible ?" response="non">
                                         <question id="41" type="glace"  name="Est ce un sport sur glace ?"  response="oui">
-                                            <sport response="Patinage artistique"/>
+                                            <sport response="Patinage artistique" image="patinage_artistique.jpg"/>
                                         </question>
                                         <question id="41" type="glace" name="Est ce un sport sur glace ?" response="non">
-                                            <sport response="Trampoline"/>
+                                            <sport response="Trampoline" image="trampoline.png"/>
                                         </question>
                                     </question>
                                 </question>
@@ -192,18 +192,18 @@
                         <question id="33" type="pleinair olympique" name="Est-ce un sport olympique ?" response="non">
                             <question id="42" type="balle" name="Le pratique t on avec une balle ?" response="oui">
                                 <question id="43"  type="raquette" name="Le pratique t on avec une raquette ?" response="oui">
-                                    <sport response="Squash"/>
+                                    <sport response="Squash" image="squash.gif"/>
                                 </question>
                                 <question id="43"  type="raquette" name="Le pratique t on avec une raquette ?" response="non">
-                                    <sport response="babyfoot"/>
+                                    <sport response="babyfoot" image="babyfoot.jpg"/>
                                 </question>
                             </question>
                             <question id="42"  type="balle" name="Le pratique t on avec une balle ?" response="non">
                                 <question id="44"  type="combat" name="Est ce un sport de combat ?" response="oui">
-                                    <sport response="self defense"/>
+                                    <sport response="self defense" image="self_defense.jpg"/>
                                 </question>
                                 <question id="44"  type="combat" name="Est ce un sport de combat ?"  response="non">
-                                    <sport response="musculation"/>
+                                    <sport response="musculation" image="musculation.jpg"/>
                                 </question>
                             </question>
                         </question>
@@ -212,25 +212,25 @@
                 <question id="16"  type="collectif" name="Est ce un sport uniquement collectif ?" response="oui">
                     <question id="45" type="ballon" name="Le pratique t on avec un ballon ?" response="oui">
                         <question id="46" type="pelouse" name="Le pratique t on uniquement sur une pelouse ?" response="oui">
-                            <sport response="rugby"/>
+                            <sport response="rugby" image="rugby.jpg"/>
                         </question>
                         <question id="46" type="pelouse" name="Le pratique t on uniquement sur une pelouse ?"  response="non">
                             <question id="47" type="sable" name="Le pratique t on uniquement sur du sable ?" response="oui">
-                                <sport response="beach soccer"/>
+                                <sport response="beach soccer" image="beach_soccer.jpg"/>
                             </question>
                             <question id="47" type="sable" name="Le pratique t on uniquement sur du sable ?" response="non">
                                 <question id="48" type="cage" name="Le pratique t on uniquement avec des cages ?"  response="oui">
-                                    <sport response="Handball"/>
+                                    <sport response="Handball" image="handball.jpg"/>
                                 </question>
                                 <question id="48" type="cage" name="Le pratique t on uniquement avec des cages ?" response="non">
-                                    <sport response="Volleyball"/>
+                                    <sport response="Volleyball" image="volleyball.gif"/>
                                 </question>
                             </question>
                         </question>
                     </question>
                     <question id="45"  type="ballon"  name="Le pratique t on avec un ballon ?"  response="non">
                         <question id="49" type="nautique"  name="Est ce un sport nautique ?"  response="oui">
-                            <sport response="aviron"/>
+                            <sport response="aviron" image="aviron.jpg"/>
                         </question>
                         <question id="49" type="nautique"  name="Est ce un sport nautique ?"  response="non">
                             <sport response="course de relai"/>
@@ -242,23 +242,23 @@
         <question id="2" type="asiatique"  name="Est-ce un sport asiatique ?"  response="oui">
             <question id="50" type="asiatique gants" name="Se pratique-t-il avec des gants ?" response="oui">
                 <question id="51"  type="asiatique olympique" name="Est-ce un sport olympique ?" response="oui">
-                    <sport response="karate"/>
+                    <sport response="karate" image="karate.jpg"/>
                 </question>
                 <question id="51"  type="asiatique olympique" name="Est-ce un sport olympique ?" response="non">
-                    <sport response="boxe chinoise"/>
+                    <sport response="boxe chinoise" image="boxe_chinoise.jpg"/>
                 </question>
             </question>
             <question id="50"  type="asiatique gants" name="Se pratique-t-il avec des gants ?" response="non">
                 <question id="52"  type="kimono" name="Le pratique t on avec un kimono ?" response="oui">
                     <question id="53" type="arme" name="Y a t il une arme ?" response="oui">
-                        <sport response="Jodo"/>
+                        <sport response="Jodo" image="jodo.gif"/>
                     </question>
                     <question id="53" type="arme"  name="Y a t il une arme ?" response="non">
-                        <sport response="Taekwondo"/>
+                        <sport response="Taekwondo" image="taekwondo.jpg"/>
                     </question>
                 </question>
                 <question id="52" type="kimono"  name="Le pratique t on avec un kimono ?" response="non">
-                    <sport response="sumo"/>
+                    <sport response="sumo" image="sumo.jpg"/>
                 </question>
             </question>
         </question>
@@ -267,7 +267,7 @@
         <question id="54" type="gants" response="oui" name="Est-il obligatoire de porter des gants?">
             <question  id="55" type="gants collectif" response="oui" name="Est-ce un sport uniquement collectif?">
                 <question  id="56" type="palet" response="non" name="Il y a t'il un palet?">
-                    <sport response="baseball"/>
+                    <sport response="baseball" image="baseball.jpg"/>
                 </question>
                 <question  id="56" type="palet" response="oui" name="Il y a t'il un palet?">
                     <sport response="Hockey sur glace"/>
@@ -275,14 +275,14 @@
             </question>
             <question id="55" type="gants collectif" response="non" name="Est-ce un sport uniquement collectif?">
                 <question  id="57" type="hiver" name="Est ce un sport d'hiver?"  response="oui">
-                    <sport response="Snowboard"/>
+                    <sport response="Snowboard" image="snowboard.gif"/>
                 </question>
                 <question id="57" type="hiver"  name="Est ce un sport d'hiver?"  response="non">
                     <question id="58" type="combat"  name="Est ce un sport de combat?"  response="oui">
-                        <sport response="boxe americaine"/>
+                        <sport response="boxe americaine" image="boxe_americaine.gif"/>
                     </question>
                     <question id="58" type="combat"  name="Est ce un sport de combat?"  response="non">
-                        <sport response="Roller"/>
+                        <sport response="Roller" image="roller.gif"/>
                     </question>
                 </question>
             </question>
@@ -292,63 +292,63 @@
                 <question id="60" type="extreme collectif" response="non" name="Est-ce un sport uniquement collectif?">
                     <question id="61" type="extreme terrestre" response="non" name="Est-ce un sport uniquement terrestre?">
                         <question id="62" type="vent americain" response="oui" name="Est-ce que le vent est utilsé dans le sport?">
-                            <sport response="Planche a Voile"/>
+                            <sport response="Planche a Voile" image="planche_a_voile.png"/>
                         </question>
                         <question id="62" type="vent americain" response="non" name="Est-ce que le vent est utilsé dans le sport?">
-                            <sport response="Surf"/>
+                            <sport response="Surf" image="surf.gif"/>
                         </question>
                     </question>
                     <question id="61" type="extreme terrestre" response="oui" name="Est-ce un sport uniquement terrestre?">
                         <question id="63" response="oui" name="Est ce que le sport utilise des roulettes?">
                             <question id="64" response="oui" name="Y a t'il une planche?">
-                                <sport response="Skate Board"/>
+                                <sport response="Skate Board" image="skateboard.gif"/>
                             </question>
                             <question id="64" response="non" name="Y a t'il une planche?">
                                 <sport response="roller"/>
                             </question>
                         </question>
                         <question  id="63"  response="non" name="Est ce que le sport utilise des roulettes?">
-                            <sport response="BMX"/>
+                            <sport response="BMX" image="bmx.gif"/>
                         </question>
                     </question>
                 </question>
                 <question id="60" type="extreme collectif" response="oui" name="Est-ce un sport uniquement collectif?">
-                    <sport response="Rafting"/>
+                    <sport response="Rafting" image="rafting.jpg"/>
                 </question>
             </question>
             <question id="59" type="extreme" response="non" name="Est-ce un sport extreme?">
                 <question id="65" type="collectif americain" response="oui" name="Est-ce un sport uniquement collectif?">
                     <question  id="66" type="collectif ballon americain" response="oui" name="Utilise-t'on un ballon?">
                         <question  id="67" type="collectif ballon americain pleinair" response="oui" name="Est-ce un sport uniquement de plein air?" >
-                            <sport response="football americain"/>
+                            <sport response="football americain" image="football_americain.jpg"/>
                         </question>
                         <question id="67"  type="collectif ballon americain pleinair" response="non" name="Est-ce un sport uniquement de plein air?">
-                            <sport response="basketball"/>
+                            <sport response="basketball" image="baskeball.jpg"/>
                         </question>
                     </question>
                     <question  id="66" type="collectif ballon americain" response="non" name="Utilise-t'on un ballon?">
                         <question id="68" type="choregraphique americain" response="oui" name="Est-ce un sport choregraphique?">
-                            <sport response="Salsa"/>
+                            <sport response="Salsa" image="salsa.jpg"/>
                         </question>
                         <question  id="68" type="choregraphique americain" response="non" name="Est-ce un sport choregraphique?">
-                            <sport response="Paintball"/>
+                            <sport response="Paintball" image="paintball.jpg"/>
                         </question>
                     </question>
                 </question>
                 <question  id="65" type="collectif americain" response="non" name="Est-ce un sport uniquement collectif?">
                     <question id="69" type="combat americain" response="oui" name="Est-ce un sport de combat?">
-                        <sport response="jujistu"/>
+                        <sport response="jujistu" image="jujistu.jpg"/>
                     </question>
                     <question id="69" type="combat americain" response="non" name="Est-ce un sport de combat?">
                         <question id="70" type="raquette" response="oui" name="Utilise-t'on des raquettes?">
-                            <sport response="paddel"/>
+                            <sport response="paddel" image="paddle.png"/>
                         </question>
                         <question id="70" type="raquette" response="non" name="Utilise-t'on des raquettes?">
                             <question id="71" type="choregraphique americain non collectif" response="oui" name="Est-ce un sport choregraphique?">
-                                <sport response="hip hop"/>
+                                <sport response="hip hop" image="hip_hop.png"/>
                             </question>
                             <question id="71" type="choregraphique americain non collectif" response="non" name="Est-ce un sport choregraphique?">
-                                <sport response="Bowling"/>
+                                <sport response="Bowling" image="bowling.jpg"/>
                             </question>
                         </question>
                     </question>
