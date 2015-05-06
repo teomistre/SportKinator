@@ -10,25 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView" />
-        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutDisplayQuestion">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="61dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
                 android:id="@+id/questionText" />
@@ -36,128 +28,150 @@
 
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/playsButton">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/button"
-                android:id="@+id/buttonYes"
-                android:background="@color/material_blue_grey_800"
-                android:onClick="buttonYes"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/buttonDontKnow"
-                android:id="@+id/buttonDontKnow"
-                android:background="@color/material_blue_grey_800"
-                android:onClick="buttonDontKnow"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/buttonNo"
-                android:id="@+id/buttonNo"
-                android:background="@color/material_blue_grey_800"
-                android:onClick="buttonNo"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/linearLayoutFindResponse">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Oui ! "
-                android:id="@+id/buttonReplay"
-                android:onClick="buttonReplay"/>
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Non"
-                android:id="@+id/buttonShowAddQuestion"
-                android:onClick="buttonShowAddQuestion"
-                />
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Continuer"
-                android:id="@+id/buttonContinue"
-                android:onClick="buttonContinue"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/formSport">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="129dp"
+            android:id="@+id/linearLayoutResponseButtons"
+            android:weightSum="1">
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sport"
-                    android:id="@+id/textViewSport" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="89dp"
+                    android:layout_height="70dp">
 
-                <EditText
+                    <Button
+                        android:layout_width="74dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/button"
+                        android:id="@+id/buttonYes"
+                        android:background="@color/material_blue_grey_800"
+                        android:onClick="buttonYes"
+                        android:textColor="#ffffffff" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="108dp"
+                    android:layout_height="68dp">
+
+                    <Button
+                        android:layout_width="87dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/buttonDontKnow"
+                        android:id="@+id/buttonDontKnow"
+                        android:background="@color/material_blue_grey_800"
+                        android:onClick="buttonDontKnow"
+                        android:textColor="#ffffffff" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editTextSport" />
+                    android:layout_height="match_parent" >
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/buttonNo"
+                        android:id="@+id/buttonNo"
+                        android:background="@color/material_blue_grey_800"
+                        android:onClick="buttonNo"
+                        android:textColor="#ffffffff" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
+
+    </LinearLayout>
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/formQuestion">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutFindResponse"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Est ce le bon sport ?"
+                android:id="@+id/textView" />
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:baselineAligned="false">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="149dp"
                     android:layout_height="wrap_content"
-                    android:text="Question"
-                    android:id="@+id/textViewQuestion" />
+                    android:layout_gravity="center_vertical">
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editTextQuestion" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Oui ! "
+                        android:id="@+id/buttonReplay"
+                        android:onClick="buttonReplay"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="138dp"
+                    android:layout_height="fill_parent">
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Non"
+                        android:id="@+id/buttonShowAddQuestion"
+                        android:onClick="buttonShowAddQuestion"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
             </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Continuer"
+                    android:id="@+id/buttonContinue"
+                    android:onClick="buttonContinue"
+                    />
+            </LinearLayout>
+
         </LinearLayout>
+
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutImage">
 
-            <Button
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ajouter"
-                android:id="@+id/buttonAddQuestion"
-                android:onClick="buttonAddQuestion"/>
+                android:id="@+id/imageView" />
         </LinearLayout>
+
 
     </LinearLayout>
 

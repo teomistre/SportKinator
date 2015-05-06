@@ -6,4 +6,5 @@
     <string name="button">Oui</string>
     <string name="buttonDontKnow">Je ne sais pas</string>
     <string name="buttonNo">Non</string>
+    <string name="title_activity_form_sport">FormSport</string>
 </resources>
