@@ -99,7 +99,7 @@
                         <question id="18" type="extreme" name="Est ce un sport extreme ?" response="non">
                             <question id="24" type="terrestre" name="Se pratique t il uniquement sur un milieu terrestre ?" response="oui">
                                 <question id="25" type="terrestre animalier" name="Y a-t-il un rapport avec les animeaux ?" response="oui">
-                                    <sport response="randonnee equestre"/>
+                                    <sport response="equitation"/>
                                 </question>
                                 <question id="25" type="terrestre animalier" name="Y a-t-il un rapport avec les animeaux ?" response="non">
                                     <question id="26" type="corde" name="Y a t il une corde ?"  response="oui">
@@ -119,7 +119,7 @@
                                                 <sport response="lancer du poids"/>
                                             </question>
                                             <question id="29" type="course" name="Est ce un sport de course ?" response="oui">
-                                                <sport response="fond"/>
+                                                <sport response="course a pied"/>
                                             </question>
                                         </question>
                                     </question>
@@ -230,10 +230,10 @@
                     </question>
                     <question id="45"  type="ballon"  name="Le pratique t on avec un ballon ?"  response="non">
                         <question id="49" type="nautique"  name="Est ce un sport nautique ?"  response="oui">
-                            <sport response="aviron couple"/>
+                            <sport response="aviron"/>
                         </question>
                         <question id="49" type="nautique"  name="Est ce un sport nautique ?"  response="non">
-                            <sport response="relais"/>
+                            <sport response="course de relais"/>
                         </question>
                     </question>
                 </question>
