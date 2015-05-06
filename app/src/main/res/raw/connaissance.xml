@@ -337,11 +337,11 @@
                 </question>
                 <question  id="65" type="collectif americain" response="non" name="Est-ce un sport uniquement collectif?">
                     <question id="69" type="combat americain" response="oui" name="Est-ce un sport de combat?">
-                        <sport response="jujistu bresilien"/>
+                        <sport response="jujistu"/>
                     </question>
                     <question id="69" type="combat americain" response="non" name="Est-ce un sport de combat?">
                         <question id="70" type="raquette" response="oui" name="Utilise-t'on des raquettes?">
-                            <sport response="padel"/>
+                            <sport response="paddel"/>
                         </question>
                         <question id="70" type="raquette" response="non" name="Utilise-t'on des raquettes?">
                             <question id="71" type="choregraphique americain non collectif" response="oui" name="Est-ce un sport choregraphique?">
