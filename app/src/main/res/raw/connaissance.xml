@@ -233,7 +233,7 @@
                             <sport response="aviron"/>
                         </question>
                         <question id="49" type="nautique"  name="Est ce un sport nautique ?"  response="non">
-                            <sport response="course de relais"/>
+                            <sport response="course de relai"/>
                         </question>
                     </question>
                 </question>
