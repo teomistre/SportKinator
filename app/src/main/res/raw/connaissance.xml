@@ -78,7 +78,7 @@
                                         <sport response="aviation" image="aviation.png"/>
                                     </question>
                                     <question id="21" type="mecanique aerien" name="Est ce un sport aerien ?" response="non">
-                                        <sport response="Rallye"/>
+                                        <sport response="Rallye" image="rallye.jpg"/>
                                     </question>
                                 </question>
                             </question>
@@ -233,7 +233,7 @@
                             <sport response="aviron" image="aviron.jpg"/>
                         </question>
                         <question id="49" type="nautique"  name="Est ce un sport nautique ?"  response="non">
-                            <sport response="course de relai"/>
+                            <sport response="course de relai" image="course_relai.gif"/>
                         </question>
                     </question>
                 </question>
