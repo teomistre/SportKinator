@@ -184,7 +184,7 @@ public class Main extends ActionBarActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Continuer ?")
                 .setMessage("Voulez vous continuer ?")
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         if(dontKnow) {
                             question = questiondontKnow;
@@ -199,7 +199,7 @@ public class Main extends ActionBarActivity {
                         }
                     }
                 })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                .setNegativeButton("Non", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent formSportActivity = new Intent(Main.this, FormSport.class);
                         startActivity(formSportActivity);
