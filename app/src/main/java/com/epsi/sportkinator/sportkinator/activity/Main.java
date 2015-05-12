@@ -1,5 +1,8 @@
 package com.epsi.sportkinator.sportkinator.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -71,9 +74,6 @@ public class Main extends ActionBarActivity {
         SportXmlParser sportXmlParser = new SportXmlParser();
 
         InputStream inputStream = null;
-      //  inputStream = getResources().openRawResource(R.raw.connaissance);
-
-
         File mFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/bdConnaissance.xml");
 
         try {
@@ -81,9 +81,6 @@ public class Main extends ActionBarActivity {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-        //inputStream = getResources().getXml(R.xml.connaissance);
-
         question = sportXmlParser.readQuestion(inputStream, question, response);
 
         if (question.getName()==null)
@@ -94,6 +91,7 @@ public class Main extends ActionBarActivity {
 
             layoutFindResponse.setVisibility(View.VISIBLE);
             layoutResponseButtons.setVisibility(View.GONE);
+
 
         }
         else{
@@ -183,6 +181,32 @@ public class Main extends ActionBarActivity {
     }
 
     public void buttonShowAddQuestion(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Continuer ?")
+                .setMessage("Voulez vous continuer ?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(dontKnow) {
+                            question = questiondontKnow;
+                            response = "oui";
+                            changeQuestion(response);
+                            dontKnow=false;
+                        }
+                        else{
+                            response = "oui";
+                            question=null;
+                            changeQuestion(response);
+                        }
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent formSportActivity = new Intent(Main.this, FormSport.class);
+                        startActivity(formSportActivity);
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
         layoutFindResponse.setVisibility(View.VISIBLE);
     }
 

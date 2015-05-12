@@ -50,9 +50,9 @@
                         android:layout_height="match_parent"
                         android:text="@string/button"
                         android:id="@+id/buttonYes"
-                        android:background="@color/material_blue_grey_800"
                         android:onClick="buttonYes"
-                        android:textColor="#ffffffff" />
+                        android:textColor="#ffffffff"
+                        style="@style/btnStyleOrange" />
 
                 </LinearLayout>
 
@@ -66,9 +66,9 @@
                         android:layout_height="match_parent"
                         android:text="@string/buttonDontKnow"
                         android:id="@+id/buttonDontKnow"
-                        android:background="@color/material_blue_grey_800"
                         android:onClick="buttonDontKnow"
-                        android:textColor="#ffffffff" />
+                        android:textColor="#ffffffff"
+                        style="@style/btnStyleOrange" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -81,9 +81,9 @@
                         android:layout_height="match_parent"
                         android:text="@string/buttonNo"
                         android:id="@+id/buttonNo"
-                        android:background="@color/material_blue_grey_800"
                         android:onClick="buttonNo"
-                        android:textColor="#ffffffff" />
+                        android:textColor="#ffffffff"
+                        style="@style/btnStyleOrange" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -121,7 +121,8 @@
                         android:text="Oui ! "
                         android:id="@+id/buttonReplay"
                         android:onClick="buttonReplay"
-                        android:layout_gravity="center_vertical" />
+                        android:layout_gravity="center_vertical"
+                        style="@style/btnStyleGenoa" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -130,7 +131,7 @@
                     android:layout_height="fill_parent">
 
                     <Button
-                        style="?android:attr/buttonStyleSmall"
+                        style="@style/btnStyleBreakerBay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Non"
@@ -141,11 +142,12 @@
 
             </LinearLayout>
 
-            <LinearLayout
+           <!-- <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/linearLayoutContniueGame">
 
                 <Button
                     style="?android:attr/buttonStyleSmall"
@@ -155,7 +157,7 @@
                     android:id="@+id/buttonContinue"
                     android:onClick="buttonContinue"
                     />
-            </LinearLayout>
+            </LinearLayout>-->
 
         </LinearLayout>
 

@@ -7,4 +7,5 @@
     <string name="buttonDontKnow">Je ne sais pas</string>
     <string name="buttonNo">Non</string>
     <string name="title_activity_form_sport">FormSport</string>
+    <string name="title_activity_launcher">Launcher</string>
 </resources>

@@ -73,7 +73,8 @@
                 android:layout_height="wrap_content"
                 android:text="Ajouter le sport"
                 android:onClick="buttonAddSport"
-                android:id="@+id/buttonAddSport" />
+                android:id="@+id/buttonAddSport"
+                style="@style/btnStyleBreakerBay" />
         </LinearLayout>
 
     </LinearLayout>
