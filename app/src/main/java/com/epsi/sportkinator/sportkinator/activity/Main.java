@@ -3,9 +3,11 @@ package com.epsi.sportkinator.sportkinator.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epsi.sportkinator.sportkinator.R;
+import com.epsi.sportkinator.sportkinator.custom.CustomTextView;
 import com.epsi.sportkinator.sportkinator.entities.Question;
 import com.epsi.sportkinator.sportkinator.entities.Sport;
 import com.epsi.sportkinator.sportkinator.entities.Tag;
@@ -49,6 +52,9 @@ public class Main extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         //display question or sport
         textViewToChange = (TextView) findViewById(R.id.questionText);
+        Typeface fontTron = Typeface.createFromAsset(getAssets(), "fifa.ttf");
+        textViewToChange.setTypeface(fontTron);
+
 
         layoutFindResponse =(LinearLayout) findViewById(R.id.linearLayoutFindResponse);
         layoutResponseButtons =(LinearLayout) findViewById(R.id.linearLayoutResponseButtons);
@@ -64,6 +70,8 @@ public class Main extends ActionBarActivity {
                 Toast.makeText(getApplicationContext(), "Initialisation de la base de connaissance terminée.", Toast.LENGTH_SHORT).show();
             }
         } catch (IOException e) {
+            Toast.makeText(getApplicationContext(), "Une erreur est survenue lors de l'initialisation de la base de connaissance.", Toast.LENGTH_SHORT).show();
+            Log.e("Copy file ", e.getMessage());
             e.printStackTrace();
         }
 
@@ -88,15 +96,14 @@ public class Main extends ActionBarActivity {
 
             textViewToChange.setText(
                     "Le sport auquel vous pensez est : " + question.getResponse() + " !!");
-
             layoutFindResponse.setVisibility(View.VISIBLE);
             layoutResponseButtons.setVisibility(View.GONE);
 
 
         }
-        else{
-            textViewToChange.setText(
-                    question.getName());
+        else
+        {
+            textViewToChange.setText(question.getName());
         }
 
 
@@ -186,14 +193,15 @@ public class Main extends ActionBarActivity {
                 .setMessage("Voulez vous continuer ?")
                 .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        layoutResponseButtons.setVisibility(View.VISIBLE);
+                        layoutFindResponse.setVisibility(View.GONE);
+                        response = "oui";
                         if(dontKnow) {
                             question = questiondontKnow;
-                            response = "oui";
                             changeQuestion(response);
                             dontKnow=false;
                         }
                         else{
-                            response = "oui";
                             question=null;
                             changeQuestion(response);
                         }
@@ -214,8 +222,6 @@ public class Main extends ActionBarActivity {
    private void copy(String name) throws IOException {
         try {
 
-
-
             InputStream myInput = getResources().openRawResource(R.raw.connaissance);
             String outFileName = Environment.getExternalStorageDirectory() + File.separator + name;
             OutputStream myOutput = new FileOutputStream(outFileName);
@@ -226,16 +232,12 @@ public class Main extends ActionBarActivity {
             while ((length = myInput.read(buffer)) > 0) {
                 myOutput.write(buffer, 0, length);
             }
-
-
-
             // Close the streams
             myOutput.flush();
             myOutput.close();
             myInput.close();
-        } catch (Exception e) {
-            e.printStackTrace(new PrintWriter("Erreur"));
-
+            } catch (Exception e) {
+                e.printStackTrace(new PrintWriter("Erreur"));
+            }
         }
-    }
     }
