@@ -1,12 +1,13 @@
 package com.epsi.sportkinator.sportkinator.activity;
 
 import android.content.Intent;
-import android.support.v4.app.ActivityOptionsCompat;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.epsi.sportkinator.sportkinator.R;
 
@@ -17,6 +18,9 @@ public class Launcher extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
 
+        TextView textTitle = (TextView)findViewById(R.id.textTitle);
+        Typeface fontTron = Typeface.createFromAsset(getAssets(), "world_cup.ttf");
+        textTitle.setTypeface(fontTron);
         new Thread(new Runnable() {
             public void run() {
 
@@ -58,10 +62,10 @@ public class Launcher extends ActionBarActivity {
     private void getMainActivity(){
         Intent mainActivity = new Intent(Launcher.this, Main.class);
         startActivity(mainActivity);
+        this.finish();
     }
 
     public void startMainActivity(View view){
-
-        getMainActivity();
+       // getMainActivity();
     }
 }

@@ -12,18 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true"
-        android:onClick="startMainActivity">
+        android:onClick="startMainActivity"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="match_parent"
+            android:weightSum="1">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView2"
-                android:layout_gravity="center_vertical"
+                android:layout_width="254dp"
+                android:layout_height="383dp"
+                android:id="@+id/imageLauncher"
+                android:layout_gravity="center_horizontal"
                 android:src="@mipmap/sports" />
 
             <TextView
@@ -36,6 +39,7 @@
                 style="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="#ffff2900"
                 android:textStyle="bold" />
+
         </LinearLayout>
 
     </LinearLayout>
