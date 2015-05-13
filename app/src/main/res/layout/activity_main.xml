@@ -8,35 +8,38 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
 
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="122dp"
             android:id="@+id/linearLayoutDisplayQuestion">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="61dp"
+                android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
-                android:id="@+id/questionText" />
+                android:id="@+id/questionText"
+                android:layout_gravity="center_vertical" />
         </LinearLayout>
 
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="129dp"
             android:id="@+id/linearLayoutResponseButtons"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:layout_gravity="center_horizontal">
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
 

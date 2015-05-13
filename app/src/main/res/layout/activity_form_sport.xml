@@ -69,9 +69,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ajouter le sport"
-                android:onClick="buttonAddSport"
+                android:onClick="buttonAddQuestion"
                 android:id="@+id/buttonAddSport"
-                style="@style/btnStyleBreakerBay" />
+                style="@style/btnStyleBreakerBay"
+                android:clickable="true" />
         </LinearLayout>
 
     </LinearLayout>

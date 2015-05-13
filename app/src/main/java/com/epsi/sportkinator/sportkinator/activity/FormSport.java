@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,13 +24,30 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class FormSport extends ActionBarActivity {
+    private InputStream inputStream;
+    private String sport;
+    EditText nameSport;
+    EditText nameQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_sport);
-        Button buttonLoadImage = (Button)findViewById(R.id.imageButton);
 
+        nameSport = (EditText) findViewById(R.id.nameSport);
+        nameQuestion = (EditText) findViewById(R.id.nameQuestion);
+
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                sport= null;
+            } else {
+                sport= extras.getString("sport");
+            }
+        } else {
+            sport= (String) savedInstanceState.getSerializable("sport");
+        }
+        Button buttonLoadImage = (Button)findViewById(R.id.imageButton);
         buttonLoadImage.setOnClickListener(new Button.OnClickListener(){
 
             @Override
@@ -75,10 +93,9 @@ public class FormSport extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-   /* public void buttonAddQuestion(View view){
+    public void buttonAddQuestion(View view){
         SportXmlParser sportXmlParser = new SportXmlParser();
         InputStream inputStream = null;
-        // inputStream = getResources().openRawResource(R.raw.connaissance);
 
         File mFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/bdConnaissance.xml");
 
@@ -89,21 +106,23 @@ public class FormSport extends ActionBarActivity {
             e.printStackTrace();
         }
 
-        if(!sportXmlParser.sportAllReadyExists(inputStream,editTextSport.getText().toString())){
-            //inputStream = getResources().getXml(R.xml.connaissance);
-            Question newQuestion = new Question(editTextQuestion.getText().toString(),response,"id");
-            Sport newSport= new Sport(editTextSport.getText().toString());
+        if(!sportXmlParser.sportAllReadyExists(inputStream,nameSport.getText().toString())){
+
+            Question newQuestion = new Question(nameQuestion.getText().toString(),"oui","id");
+            Sport newSport= new Sport(nameSport.getText().toString());
             try {
-                sportXmlParser.addQuestion(this,question.getResponse(),newQuestion,newSport);
+                sportXmlParser.addQuestion(this,sport,newQuestion,newSport);
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Une erreur est survenue", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
             Toast.makeText(getApplicationContext(), "Le sport a bien été ajouté", Toast.LENGTH_SHORT).show();
+            Intent mainActivity = new Intent(FormSport.this, Main.class);
+            startActivity(mainActivity);
         }
         else{
             Toast.makeText(getApplicationContext(), "Le sport existe deja !", Toast.LENGTH_SHORT).show();
         }
 
-    }*/
+    }
 }

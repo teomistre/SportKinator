@@ -182,7 +182,7 @@ public class Main extends ActionBarActivity {
 
     public void buttonShowAddQuestion(View view){
         new AlertDialog.Builder(this)
-                .setTitle("Continuer ?")
+                .setTitle("Continuer")
                 .setMessage("Voulez vous continuer ?")
                 .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -202,6 +202,7 @@ public class Main extends ActionBarActivity {
                 .setNegativeButton("Non", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent formSportActivity = new Intent(Main.this, FormSport.class);
+                        formSportActivity.putExtra("sport", question.getResponse());
                         startActivity(formSportActivity);
                     }
                 })
