@@ -3,7 +3,9 @@ package com.epsi.sportkinator.sportkinator.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,8 +40,10 @@ import java.io.PrintWriter;
 public class Main extends ActionBarActivity {
 
     private Question question;
+    private Sport sport;
     private Tag tagXML;
     private TextView textViewToChange;
+    private ImageView imageSport;
     private LinearLayout layoutFindResponse;
     private LinearLayout layoutResponseButtons;
     private String response;
@@ -55,6 +60,7 @@ public class Main extends ActionBarActivity {
         Typeface fontTron = Typeface.createFromAsset(getAssets(), "fifa.ttf");
         textViewToChange.setTypeface(fontTron);
 
+        imageSport = (ImageView) findViewById(R.id.imageView2);
 
         layoutFindResponse =(LinearLayout) findViewById(R.id.linearLayoutFindResponse);
         layoutResponseButtons =(LinearLayout) findViewById(R.id.linearLayoutResponseButtons);
@@ -75,29 +81,43 @@ public class Main extends ActionBarActivity {
             e.printStackTrace();
         }
 
+
         readTag(null);
     }
 
     private void readTag(String response) {
-        SportXmlParser sportXmlParser = new SportXmlParser();
-
-        InputStream inputStream = null;
         File mFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/bdConnaissance.xml");
+        InputStream inputStream = getInputStream(mFile);
 
-        try {
-            inputStream = new FileInputStream(mFile);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        question = sportXmlParser.readQuestion(inputStream, question, response);
+
+        SportXmlParser sportXmlParser = new SportXmlParser(inputStream);
+        question = sportXmlParser.readQuestion(question, response);
 
         if (question.getName()==null)
         {
+            sport = sportXmlParser.getSport(question.getResponse());
+            if (sport != null)
+            {
+                textViewToChange.setText(
+                        "Le sport auquel vous pensez est : " + sport.getName() + " !!");
+                if (sport.getImage() != null)
+                {
+                    if (sport.getImage().contains("/"))
+                    {
+                        imageSport.setImageBitmap(BitmapFactory.decodeFile(sport.getImage()));
+                    }
+                    else
+                    {
+                        int resourceNumber = getResources().getIdentifier(sport.getName(),"mipmap", getPackageName());
+                        imageSport.setImageResource(resourceNumber);
+                    }
+                }
 
-            textViewToChange.setText(
-                    "Le sport auquel vous pensez est : " + question.getResponse() + " !!");
-            layoutFindResponse.setVisibility(View.VISIBLE);
-            layoutResponseButtons.setVisibility(View.GONE);
+
+                layoutFindResponse.setVisibility(View.VISIBLE);
+                layoutResponseButtons.setVisibility(View.GONE);
+
+            }
 
 
         }
@@ -106,11 +126,15 @@ public class Main extends ActionBarActivity {
             textViewToChange.setText(question.getName());
         }
 
+    }
 
+    private InputStream getInputStream(File mFile) {
         try {
-            inputStream.close();
-        } catch (IOException e) {
+            return new FileInputStream(mFile);
+        } catch (FileNotFoundException e)
+        {
             e.printStackTrace();
+            return null;
         }
 
     }
@@ -141,8 +165,6 @@ public class Main extends ActionBarActivity {
 
     private void changeQuestion(String response)
     {
-
-
         readTag(response);
     }
 
