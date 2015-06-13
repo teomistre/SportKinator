@@ -71,6 +71,7 @@ public class AddNodeXml {
 
                 Element newSportToAdd = oldSportElement.clone().detach();
                 newSportToAdd.setAttribute("response", newSport.getName());
+                newSportToAdd.setAttribute("image", newSport.getImage());
                 elementQuestionToAddYes.setContent(newSportToAdd);
 
                 elementQuestionToAddNo.removeContent();
@@ -94,9 +95,22 @@ public class AddNodeXml {
 
      private Element findNode(Element element, String sport)
      {
-         Log.d("Element : ",  element.getAttributeValue("response"));
+         if (element.isRootElement())
+         {
+             List<Element> childrens = element.getChildren();
+             if (childrens.size() > 0)
+             {
+                 for(Element e: childrens)
+                 {
+                     findNode(e,sport);
+                 }
+             }
+         }
+         else
+         {
+             Log.d("Element : ",  element.getAttributeValue("response"));
              String value = element.getAttributeValue("response");
-         Log.d("value : ",  value);
+             Log.d("value : ",  value);
              if(value.equals(sport))
              {
                  oldSportElement = element;
@@ -113,6 +127,7 @@ public class AddNodeXml {
                      }
                  }
              }
+         }
          return null;
      }
 

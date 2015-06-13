@@ -1,8 +1,10 @@
 package com.epsi.sportkinator.sportkinator.activity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,6 +28,7 @@ import java.io.InputStream;
 public class FormSport extends ActionBarActivity {
     private InputStream inputStream;
     private String sport;
+    private String selectedImagePath;
     EditText nameSport;
     EditText nameQuestion;
 
@@ -47,27 +50,57 @@ public class FormSport extends ActionBarActivity {
         } else {
             sport= (String) savedInstanceState.getSerializable("sport");
         }
-        Button buttonLoadImage = (Button)findViewById(R.id.imageButton);
+        Button buttonLoadImage = (Button)findViewById(R.id.addImageButton);
         buttonLoadImage.setOnClickListener(new Button.OnClickListener(){
 
-            @Override
             public void onClick(View arg0) {
-                // TODO Auto-generated method stub
-                Intent intent = new Intent(Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, 0);
-            }});
+
+                // in onCreate or any event where your want the user to
+                // select a file
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent,
+                        "Select Picture"), 1);
+            }
+        });
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
-        super.onActivityResult(requestCode, resultCode, data);
+        //super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK){
-            Uri targetUri = data.getData();
-            //textTargetUri.setText(targetUri.toString());
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 1) {
+                Uri selectedImageUri = data.getData();
+                selectedImagePath = getPath(selectedImageUri);
+                Button buttonLoadImage = (Button)findViewById(R.id.addImageButton);
+                buttonLoadImage.setClickable(false);
+            }
         }
+    }
+
+    public String getPath(Uri uri) {
+        // just some safety built in
+        if( uri == null ) {
+            // TODO perform some logging or show user feedback
+            return null;
+        }
+        // try to retrieve the image from the media store first
+        // this will only work for images selected from gallery
+        String[] projection = { MediaStore.Images.Media.DATA };
+        Cursor cursor = managedQuery(uri, projection, null, null, null);
+        if( cursor != null ){
+            int column_index = cursor
+                    .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        }
+        // this is our fallback here
+        return uri.getPath();
     }
 
 
@@ -94,7 +127,6 @@ public class FormSport extends ActionBarActivity {
     }
 
     public void buttonAddQuestion(View view){
-        SportXmlParser sportXmlParser = new SportXmlParser();
         InputStream inputStream = null;
 
         File mFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/bdConnaissance.xml");
@@ -105,11 +137,13 @@ public class FormSport extends ActionBarActivity {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        SportXmlParser sportXmlParser = new SportXmlParser(inputStream);
 
-        if(!sportXmlParser.sportAllReadyExists(inputStream,nameSport.getText().toString())){
+
+        if(!sportXmlParser.sportAllReadyExists(nameSport.getText().toString())){
 
             Question newQuestion = new Question(nameQuestion.getText().toString(),"oui","id");
-            Sport newSport= new Sport(nameSport.getText().toString());
+            Sport newSport= new Sport(nameSport.getText().toString(),selectedImagePath);
             try {
                 sportXmlParser.addQuestion(this,sport,newQuestion,newSport);
             } catch (Exception e) {

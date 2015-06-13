@@ -20,37 +20,35 @@ import java.util.List;
  * Created by rbertal on 10/04/2015.
  */
 public class SportXmlParser {
+
+    public SportXmlParser(InputStream inputStream)
+    {
+        this.parser = getXmlPullParser(inputStream);
+    }
     // We don't use namespaces
     private static final String ns = null;
+
+    private XmlPullParser parser;
 
     /**
      * Recupere une question a partir de l'inputstream . le paremetre question et reponse permettent
      * de recuperer la balise qui correspond a la question posée afin de passer a la balise suivante
      * et donc de poser la prochaine question
-     * @param inputStream   fichier XML a lire
      * @param question Question precedente qui a été posé. si c'est la premiere question alors
      *                 parametre null
      * @param response Reponse precedente que l'utilisateur a repondu. si c'est la premiere question
      *                 alors parametre null
      * @return question si une question peut etre lue
      */
-    public Question readQuestion(InputStream inputStream, Question question, String response) {
+    public Question readQuestion(Question question, String response) {
         Question newQuestion = new Question();
         try {
-            XmlPullParser parser = getXmlPullParser(inputStream);
-
             newQuestion = getQuestion(parser, question, response);
 
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                inputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
         return newQuestion;
 
@@ -61,12 +59,19 @@ public class SportXmlParser {
      * @param inputStream   le fichier XML a parser
      * @return XmlPullParser si le mouvement d'échec est valide ou faux(false) si invalide
      */
-    private XmlPullParser getXmlPullParser(InputStream inputStream) throws XmlPullParserException {
-        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-        factory.setNamespaceAware(true);
+    private XmlPullParser getXmlPullParser(InputStream inputStream) {
+        XmlPullParser parser = null;
+        try {
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+            factory.setNamespaceAware(true);
 
-        XmlPullParser parser = factory.newPullParser();
-        parser.setInput(inputStream, null);
+            parser = factory.newPullParser();
+            parser.setInput(inputStream, null);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
         return parser;
     }
 
@@ -126,7 +131,7 @@ public class SportXmlParser {
         String nameParser = parser.getName();
         if (null == questionFind) {
             if (nameParser.equals("question")) {
-                Log.d("findQuestion nameParser ", parser.getName());
+                Log.d("findQuestion nameParser", parser.getName());
                 find = true;
             }
         } else {
@@ -161,10 +166,21 @@ public class SportXmlParser {
         return new Question(name, response, id);
     }
 
-    public boolean sportAllReadyExists (InputStream inputStream, String sport) {
+    public boolean sportAllReadyExists (String sport) {
+      return (getSport(sport) != null);
+    }
+
+
+    public void addQuestion(Context context,String sport, Question newQustion, Sport newSport) throws Exception {
+        AddNodeXml addNode = new AddNodeXml();
+        addNode.AddNode(context,sport, newQustion, newSport);
+    }
+
+    public Sport getSport(String sport) {
+        Sport sportToFind = null;
         boolean exists = false;
         try {
-            XmlPullParser parser = getXmlPullParser(inputStream);
+            ;
 
             int eventType = parser.getEventType();
 
@@ -176,6 +192,8 @@ public class SportXmlParser {
                         if (parser.getName().equals("sport")) {
                             if(sport.equalsIgnoreCase(parser.getAttributeValue(null, "response")))
                                 exists=true;
+                                sportToFind = new Sport(parser.getAttributeValue(null,"response"),parser.getAttributeValue(null, "image"));
+
                         }
                         break;
 
@@ -186,34 +204,21 @@ public class SportXmlParser {
                         if (parser.getName().equals("sport")) {
                             if(sport.equalsIgnoreCase(parser.getAttributeValue(null, "response")))
                                 exists=true;
+                            sportToFind = new Sport(parser.getAttributeValue(null,"response"),parser.getAttributeValue(null, "image"));
                         }
                     default:
                         break;
                 }
                 eventType = parser.next();
 
-
+                return  sportToFind;
             }
 
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                inputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
-        return exists;
-
+        return sportToFind;
     }
-
-
-    public void addQuestion(Context context,String sport, Question newQustion, Sport newSport) throws Exception {
-        AddNodeXml addNode = new AddNodeXml();
-        addNode.AddNode(context,sport, newQustion, newSport);
-    }
-
 }

@@ -5,18 +5,27 @@ package com.epsi.sportkinator.sportkinator.entities;
  */
 public class Sport extends Tag{
 
+    private String imagePath;
+
     public Sport(){
         super();
     }
 
-    public Sport(String n){
-        super(n);
+    public Sport(String name, String imagePath){
+        super(name);
+        this.imagePath = imagePath;
     }
+
+    public String getImage() {
+        return imagePath;
+    }
+    public void setImagePath(String imagePath) { this.imagePath = imagePath;}
 
      @Override
     public String toString() {
         return "Sport{" +
-                "response='" + name + '\'' +
+                "name='" + name + '\'' +
+                ", image='" + imagePath + '\'' +
                 '}';
     }
 }

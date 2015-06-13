@@ -52,12 +52,15 @@
             android:layout_height="116dp" >
 
             <Button
-                android:id="@+id/imageButton"
+                android:id="@+id/addImageButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Ajouter une image"
                 android:clickable="true"
-                style="@style/btnStyleGenoa" />
+                style="@style/btnStyleGenoa"
+                android:focusableInTouchMode="false"
+                android:longClickable="true"
+                android:onClick="buttonAddPicture" />
         </LinearLayout>
 
         <LinearLayout

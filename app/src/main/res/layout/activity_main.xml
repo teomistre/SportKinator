@@ -10,14 +10,15 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:id="@+id/linearLayout">
 
 
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="122dp"
+            android:layout_height="94dp"
             android:id="@+id/linearLayoutDisplayQuestion">
 
             <TextView
@@ -94,11 +95,19 @@
 
     </LinearLayout>
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutFindResponse"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:layout_above="@+id/linearLayout"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -146,36 +155,25 @@
 
             </LinearLayout>
 
-           <!-- <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/linearLayoutContniueGame">
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Continuer"
-                    android:id="@+id/buttonContinue"
-                    android:onClick="buttonContinue"
-                    />
-            </LinearLayout>-->
-
-        </LinearLayout>
 
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutImage">
+            <!-- <LinearLayout
+                 android:orientation="horizontal"
+                 android:layout_width="wrap_content"
+                 android:layout_height="fill_parent"
+                 android:layout_gravity="center_horizontal"
+                 android:id="@+id/linearLayoutContniueGame">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView" />
+                 <Button
+                     style="?android:attr/buttonStyleSmall"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Continuer"
+                     android:id="@+id/buttonContinue"
+                     android:onClick="buttonContinue"
+                     />
+             </LinearLayout>-->
+
         </LinearLayout>
 
 
