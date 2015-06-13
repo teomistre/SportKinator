@@ -46,6 +46,7 @@ public class Main extends ActionBarActivity {
     private ImageView imageSport;
     private LinearLayout layoutFindResponse;
     private LinearLayout layoutResponseButtons;
+    private LinearLayout layoutResponse;
     private String response;
     private boolean dontKnow=false;
     private Question questiondontKnow;
@@ -60,13 +61,15 @@ public class Main extends ActionBarActivity {
         Typeface fontTron = Typeface.createFromAsset(getAssets(), "fifa.ttf");
         textViewToChange.setTypeface(fontTron);
 
-        imageSport = (ImageView) findViewById(R.id.imageView2);
+        imageSport = (ImageView) findViewById(R.id.itemImage);
 
         layoutFindResponse =(LinearLayout) findViewById(R.id.linearLayoutFindResponse);
         layoutResponseButtons =(LinearLayout) findViewById(R.id.linearLayoutResponseButtons);
+        layoutResponse =(LinearLayout) findViewById(R.id.layoutResponse);
 
 
         layoutFindResponse.setVisibility(View.GONE);
+        layoutResponse.setVisibility(View.GONE);
 
 
         try {
@@ -112,10 +115,15 @@ public class Main extends ActionBarActivity {
                         imageSport.setImageResource(resourceNumber);
                     }
                 }
+                else
+                {
+                    imageSport.setImageResource(android.R.color.transparent);
+                }
 
 
                 layoutFindResponse.setVisibility(View.VISIBLE);
                 layoutResponseButtons.setVisibility(View.GONE);
+                layoutResponse.setVisibility(View.VISIBLE);
 
             }
 
@@ -204,6 +212,7 @@ public class Main extends ActionBarActivity {
 
     public void buttonReplay(View view){
         layoutResponseButtons.setVisibility(View.VISIBLE);
+        layoutResponse.setVisibility(View.GONE);
         layoutFindResponse.setVisibility(View.GONE);
         question=null;
         readTag(null);
@@ -217,6 +226,7 @@ public class Main extends ActionBarActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         layoutResponseButtons.setVisibility(View.VISIBLE);
                         layoutFindResponse.setVisibility(View.GONE);
+                        layoutResponse.setVisibility(View.GONE);
                         response = "oui";
                         if(dontKnow) {
                             question = questiondontKnow;
@@ -239,6 +249,7 @@ public class Main extends ActionBarActivity {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
         layoutFindResponse.setVisibility(View.VISIBLE);
+        layoutResponse.setVisibility(View.GONE);
     }
 
    private void copy(String name) throws IOException {

@@ -9,7 +9,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:id="@+id/linearLayout">
 
@@ -34,7 +34,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="129dp"
+            android:layout_height="wrap_content"
             android:id="@+id/linearLayoutResponseButtons"
             android:weightSum="1"
             android:layout_gravity="center_horizontal">
@@ -92,22 +92,29 @@
                 </LinearLayout>
             </LinearLayout>
 
-
     </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_gravity="top"
+            android:id="@+id/layoutResponse">
+            <ImageView
+                android:id="@+id/itemImage"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutFindResponse"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:paddingBottom="110dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView2"
-                android:layout_above="@+id/linearLayout"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -177,6 +184,7 @@
         </LinearLayout>
 
 
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.epsi.sportkinator.sportkinator.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -79,6 +80,7 @@ public class FormSport extends ActionBarActivity {
                 selectedImagePath = getPath(selectedImageUri);
                 Button buttonLoadImage = (Button)findViewById(R.id.addImageButton);
                 buttonLoadImage.setClickable(false);
+                buttonLoadImage.setBackgroundColor(Color.GREEN);
             }
         }
     }
