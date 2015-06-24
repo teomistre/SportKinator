@@ -129,36 +129,39 @@ public class FormSport extends ActionBarActivity {
     }
 
     public void buttonAddQuestion(View view){
-        InputStream inputStream = null;
+     if (nameQuestion.getText().length() > 1 && nameSport.getText().length() > 1)
+     {
+         InputStream inputStream = null;
 
-        File mFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/bdConnaissance.xml");
+         File mFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/bdConnaissance.xml");
 
-        try {
-            inputStream = new FileInputStream(mFile);
+         try {
+             inputStream = new FileInputStream(mFile);
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        SportXmlParser sportXmlParser = new SportXmlParser(inputStream);
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
+         SportXmlParser sportXmlParser = new SportXmlParser(inputStream);
 
 
-        if(!sportXmlParser.sportAllReadyExists(nameSport.getText().toString())){
+         if(!sportXmlParser.sportAllReadyExists(nameSport.getText().toString())){
 
-            Question newQuestion = new Question(nameQuestion.getText().toString(),"oui","id");
-            Sport newSport= new Sport(nameSport.getText().toString(),selectedImagePath);
-            try {
-                sportXmlParser.addQuestion(this,sport,newQuestion,newSport);
-            } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), "Une erreur est survenue", Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            }
-            Toast.makeText(getApplicationContext(), "Le sport a bien été ajouté", Toast.LENGTH_SHORT).show();
-            Intent mainActivity = new Intent(FormSport.this, Main.class);
-            startActivity(mainActivity);
-        }
-        else{
-            Toast.makeText(getApplicationContext(), "Le sport existe deja !", Toast.LENGTH_SHORT).show();
-        }
+             Question newQuestion = new Question(nameQuestion.getText().toString(),"oui","id");
+             Sport newSport= new Sport(nameSport.getText().toString(),selectedImagePath);
+             try {
+                 sportXmlParser.addQuestion(this,sport,newQuestion,newSport);
+             } catch (Exception e) {
+                 Toast.makeText(getApplicationContext(), "Une erreur est survenue", Toast.LENGTH_SHORT).show();
+                 e.printStackTrace();
+             }
+             Toast.makeText(getApplicationContext(), "Le sport a bien été ajouté", Toast.LENGTH_SHORT).show();
+             Intent mainActivity = new Intent(FormSport.this, Main.class);
+             startActivity(mainActivity);
+         }
+         else{
+             Toast.makeText(getApplicationContext(), "Le sport existe deja !", Toast.LENGTH_SHORT).show();
+         }
 
+     }
     }
 }
