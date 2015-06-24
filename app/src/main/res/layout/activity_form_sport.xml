@@ -15,41 +15,43 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="98dp" >
+            android:layout_height="100dp" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Saisir le nom du sport"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textViewSport" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:id="@+id/nameSport" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="123dp">
+            android:layout_height="120dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Saisir la question caracterisant le sport "
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textViewQuestion" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/nameQuestion" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="116dp" >
+            android:layout_width="match_parent"
+            android:layout_height="100dp" >
 
             <Button
                 android:id="@+id/addImageButton"

@@ -111,7 +111,7 @@ public class Main extends ActionBarActivity {
                     }
                     else
                     {
-                        int resourceNumber = getResources().getIdentifier(sport.getName(),"mipmap", getPackageName());
+                        int resourceNumber = getResources().getIdentifier(sport.getName().trim().toLowerCase(),"mipmap", getPackageName());
                         imageSport.setImageResource(resourceNumber);
                     }
                 }
@@ -221,8 +221,8 @@ public class Main extends ActionBarActivity {
     public void buttonShowAddQuestion(View view){
         new AlertDialog.Builder(this)
                 .setTitle("Continuer")
-                .setMessage("Voulez vous continuer ?")
-                .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                .setMessage("Voulez vous réessayer ou ajouter un sport?")
+                .setPositiveButton("Réessayer", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         layoutResponseButtons.setVisibility(View.VISIBLE);
                         layoutFindResponse.setVisibility(View.GONE);
@@ -239,7 +239,7 @@ public class Main extends ActionBarActivity {
                         }
                     }
                 })
-                .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Ajouter Sport", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent formSportActivity = new Intent(Main.this, FormSport.class);
                         formSportActivity.putExtra("sport", question.getResponse());

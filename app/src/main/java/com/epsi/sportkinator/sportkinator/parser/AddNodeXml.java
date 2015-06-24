@@ -71,7 +71,13 @@ public class AddNodeXml {
 
                 Element newSportToAdd = oldSportElement.clone().detach();
                 newSportToAdd.setAttribute("response", newSport.getName());
-                newSportToAdd.setAttribute("image", newSport.getImage());
+                if (newSport.getImage() != null) {
+                    newSportToAdd.setAttribute("image", newSport.getImage());
+                }
+                else
+                {
+                    newSportToAdd.setAttribute("image", "");
+                }
                 elementQuestionToAddYes.setContent(newSportToAdd);
 
                 elementQuestionToAddNo.removeContent();
